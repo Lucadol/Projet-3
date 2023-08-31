@@ -4,9 +4,9 @@
 //     return data;
 //   };
 
-import { boutonFilter } from "./modules/filtres.js";
-import { genererGalerie } from "./modules/galerie.js";
-import { boutonVert } from "./modules/bouton.js";
+import { boutonFilter } from "./modules-portfolio/filtres.js";
+import { genererGalerie } from "./modules-portfolio/galerie.js";
+import { boutonVert } from "./modules-portfolio/bouton.js";
 
 
 let gallery = window.localStorage.getItem('gallery')

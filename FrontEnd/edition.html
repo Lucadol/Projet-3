@@ -10,18 +10,25 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="main.js"></script>
+    <script src="https://kit.fontawesome.com/102e595c97.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="header">
-	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-	<nav>
-		<ul>
-			<li><a href="index.html">projets</a></li>
-			<li><a href="#contact">contact</a></li>
-			<li><a href="login.html">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
+<header class="header-modifier">
+    <div class="bande-noire">
+        <p class="noir"><i class="fa-regular fa-pen-to-square"></i> Mode édition</p>
+        <p class="blanc">publier les changements</p>
+    </div>
+    <div class="presentation">
+        <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">projets</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li><a href="login.html">login</a></li>
+                <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 <main>
 	<section id="introduction">
@@ -36,13 +43,18 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes projets</h2>
-		<div class="button-container">
+        <div class="titre">
+            <h2 class="title">Mes projets</h2>
+            <p><i class="fa-regular fa-pen-to-square"></i> <a href="edition-galerie.html">modifier</a></p>
+        </div>
+
+    
+		<!-- <div class="button-container">
 			<button class="btn-tous bouton-clique">Tous</button>
 			<button class="btn-objets">Objets</button>
 			<button class="btn-appartements">Appartements</button>
 			<button class="btn-hotels">Hôtels & restaurants</button>
-		</div>
+		</div> -->
 		<div class="gallery">
 			<!-- <figure>
 				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
