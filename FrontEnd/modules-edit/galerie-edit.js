@@ -1,4 +1,4 @@
-export function genererGalerie(data){
+export function genererGalerieSansTitre(data){
     for (let i = 0; i < data.length; i++) {
         const article = data[i]
 

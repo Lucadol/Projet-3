@@ -9,7 +9,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-	<script type="module" src="main.js"></script>
+	<!-- <script type="module" src="main.js"></script> -->
+	<script type="module" src="edit.js"></script>
     <script src="https://kit.fontawesome.com/102e595c97.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -45,7 +46,33 @@
 	<section id="portfolio">
         <div class="titre">
             <h2 class="title">Mes projets</h2>
-            <p><i class="fa-regular fa-pen-to-square"></i> <a href="edition-galerie.html">modifier</a></p>
+            <p class="modifier"><i class="fa-regular fa-pen-to-square"></i> <a href="#modal1" class="js-modal">modifier</a></p>
+
+			<aside id="modal1" class="modal" aria-hidden="true" role="dialog" style="display: none;">
+				<div class="modal-wrapper js-modal-stop">
+					<button><i class="fa-solid fa-xmark js-modal-close"></i></button>
+					<h3>Galerie photo</h3>
+
+					<div class="gallery-edit">
+
+        
+					</div>
+				
+					<div class="line">
+				
+					</div>
+				
+					<form action="#" method="post">
+						<input type="submit" value="Ajouter une photo">
+					</form>
+				
+					<p class="red">Supprimer une photo</p>
+
+				</div>
+
+
+			</aside>
+
         </div>
 
     
