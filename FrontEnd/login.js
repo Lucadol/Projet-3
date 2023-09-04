@@ -11,6 +11,9 @@
 
 // verifierString()
 
+const erreur = document.querySelector('.login p')
+erreur.style.display = 'none'
+
 const formulaire = document.getElementById('login')
 
 formulaire.addEventListener('submit', async function(event) {
@@ -23,9 +26,10 @@ formulaire.addEventListener('submit', async function(event) {
     console.log('Mot de passe : ', motdepasse)
 
     const donnees = {
-        "email": "user@example.com",
-        "password": "motdepasse"
+        "email": email,
+        "password": motdepasse
     }
+
     try {
         const response = await fetch("http://localhost:5678/api/users/login", {
             method: "POST",
@@ -37,12 +41,17 @@ formulaire.addEventListener('submit', async function(event) {
             throw new Error('La requête a échoué')
         }
 
-        const data = await response.json()
-        console.log('Réponse du serveur : ', data)
+        const token = await response.json()
+        localStorage.setItem('token', JSON.stringify(token))
+        //permet d'ouvrir la nouvelle page dans le même onglet
+        window.location.href = "edition.html"
 
     } catch (error) {
-        console.log('Erreur : ', error)
+        //affiche l'erreur en html
+        erreur.style.display = 'block'
     }
+
+
     
 
     // .then(response => response.json())
