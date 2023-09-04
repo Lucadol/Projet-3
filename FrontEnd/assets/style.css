@@ -219,7 +219,7 @@ a:hover {
 	background-color: #1D6154;
 }
 
-#portfolio .titre-edit {
+.titre-edit {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -228,15 +228,16 @@ a:hover {
 	margin-bottom: 50px;
 }
 
-#portfolio .title {
+.title {
 	margin-right: 10px;
 }
 
-#portfolio .modifier {
+.modifier {
 	margin-bottom: 25px;
+	margin-top: 30px;
 }
 
-#portfolio a {
+.titre-edit a {
 	text-decoration: none;
 }
 
@@ -430,4 +431,23 @@ footer nav ul {
 
 .red {
 	color: red;
+}
+
+.image-div {
+	position: relative;
+}
+
+.image-div i {
+	font-size: 10px;
+	position: absolute;
+	bottom: 82px;
+	left: 55px;
+	color: white;
+	padding: 3px 4px;
+	/* padding-bottom: 7px; */
+	background-color: black;
+	/* width: 10px;
+	height: 10px; */
+	text-align: center;
+	border-radius: 2px ;
 }
