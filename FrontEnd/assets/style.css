@@ -83,7 +83,9 @@ header .presentation {
 	background-color: black;
 	color:white;
 	padding: 10px;
-	/* margin-right: 20px; */
+	max-width: none;
+	width: 100%;
+	margin: 0 auto; /* Centre l'élément horizontalement */	
 }
 
 .bande-noire .noir {
@@ -217,17 +219,17 @@ a:hover {
 	background-color: #1D6154;
 }
 
-#portfolio .titre {
+#portfolio .titre-edit {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	margin-left: 100px;
+	margin-left: 85px;
 	margin-bottom: 50px;
 }
 
 #portfolio .title {
-	margin-right: 20px;
+	margin-right: 10px;
 }
 
 #portfolio .modifier {

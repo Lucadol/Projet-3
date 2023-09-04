@@ -11,60 +11,61 @@
 
 // verifierString()
 
-const erreur = document.querySelector('.login p')
-erreur.style.display = 'none'
+import { genererGalerie } from "./modules-portfolio/galerie.js";
 
-const formulaire = document.getElementById('login')
+export function login() {
 
-formulaire.addEventListener('submit', async function(event) {
-    event.preventDefault()
+    // Sélectionne l'élément qui affichera les erreurs de connexion
+    const erreur = document.querySelector('.login p')
+    erreur.style.display = 'none'
 
-    const email = document.getElementById('email').value
-    const motdepasse = document.getElementById('password').value
+    const formulaire = document.getElementById('login')
 
-    console.log('Email : ', email)
-    console.log('Mot de passe : ', motdepasse)
+    // Ajoute un écouteur d'événements pour gérer la soumission du formulaire
+    formulaire.addEventListener('submit', async function(event) {
+        event.preventDefault()
 
-    const donnees = {
-        "email": email,
-        "password": motdepasse
-    }
+         // Récupérez les valeurs de l'e-mail et du mot de passe à partir des champs de formulaire
+        const email = document.getElementById('email').value
+        const motdepasse = document.getElementById('password').value
 
-    try {
-        const response = await fetch("http://localhost:5678/api/users/login", {
-            method: "POST",
-            body: JSON.stringify(donnees),
-            headers: {"Content-Type": "application/json"}
-            })
+        console.log('Email : ', email)
+        console.log('Mot de passe : ', motdepasse)
 
-        if (!response.ok) {
-            throw new Error('La requête a échoué')
+         // Permet de créer un objet de données à envoyer au serveur
+        const donnees = {
+            "email": email,
+            "password": motdepasse
         }
 
-        const token = await response.json()
-        localStorage.setItem('token', JSON.stringify(token))
-        //permet d'ouvrir la nouvelle page dans le même onglet
-        window.location.href = "edition.html"
+        try {
+            // Effectue une requête POST au serveur pour se connecter
+            const response = await fetch("http://localhost:5678/api/users/login", {
+                method: "POST",
+                body: JSON.stringify(donnees),
+                headers: {"Content-Type": "application/json"}
+                })
 
-    } catch (error) {
-        //affiche l'erreur en html
-        erreur.style.display = 'block'
-    }
+            if (!response.ok) {
+                throw new Error('La requête a échoué')
+            }
 
+            const token = await response.json()
+            localStorage.setItem('token', JSON.stringify(token))
+            //permet d'ouvrir la nouvelle page dans le même onglet
+            window.location.href = "index.html"
+            genererGalerie()
 
-    
+        } catch (error) {
+            // Affiche l'erreur en html
+            erreur.style.display = 'block'
+        }
 
-    // .then(response => response.json())
-    // .then(data => {
-    //     // Traitez la réponse du serveur ici
-    //     console.log('Réponse du serveur : ', data);
-    // })
-    // .catch(error => {
-    //     // Gérez les erreurs ici
-    //     console.error('Erreur : ', error);
-    // });
+    })
 
-})
+}
+
+login()
 
 
 
