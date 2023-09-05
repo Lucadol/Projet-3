@@ -67,45 +67,43 @@
 
 			<aside id="modal1" class="modal" aria-hidden="true" role="dialog" style="display: none;">
 				<div class="modal-wrapper js-modal-stop">
+
 					<div class="div1">
 						<button><i class="fa-solid fa-xmark js-modal-close"></i></button>
-						<h3>Galerie photo</h3>
-	
-						<div class="gallery-edit">
-	
-						</div>
-					
-						<hr class="line">
-					
-						</hr>
-					
-						<form>
-							<input type="button" id="ajout-photo" value="Ajouter une photo">
-						</form>
-					
+						<h3>Galerie photo</h3>	
+						<div class="gallery-edit"></div>					
+						<hr class="line"></hr>
+						<form><input type="button" class="bouton-vert" id="ajout-photo" value="Ajouter une photo"></form>					
 						<p class="red">Supprimer une photo</p>
 					</div>
 
+					<!-- Il me reste encore à désactiver le bouton valider et mettre en forme le choix du fichier -->
 					<div class="div2">
 						<button><i class="fa-solid fa-arrow-left" id="fleche"></i></button>
 						<button><i class="fa-solid fa-xmark js-modal-close-photo"></i></button>
 						<h3>Ajout photo</h3>
 
-						<i class="fa-regular fa-image"></i>
-
 
 						<form>
-							<input type="file">
-							<label for="title">Titre</label>
-							<input type="text">
-							<label for="category">Catégorie</label>
+							<div class="fond-photo">
+								<i class="fa-regular fa-image" id="image"></i>
+
+								<input type="file" accept=".img,.jpg">
+								<p>jpg, png : 4mo max</p>
+							</div>
+							<label for="title" class="title">Titre</label>
+							<input type="text" class="input-blanc">
+							<label for="category" class="title">Catégorie</label>
+							<select name="category" id="category" class="input-blanc">
+								<option value="id1">Objets</option>
+								<option value="id2">Appartements</option>
+								<option value="id3">Hôtels & restaurants</option>
+							</select>
 							
-							<hr class="line"></hr>
-							<input type="submit" value="Valider">
+							<hr class="line" id="line2"></hr>
+							<input type="submit" class="bouton-vert" value="Valider">
 						</form>
-
-
-				</div>
+					</div>
 					
 				</div>
 			</aside>

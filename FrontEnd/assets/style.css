@@ -360,9 +360,10 @@ footer nav ul {
 	justify-content: center;
 	overflow: auto;
 	width: 630px;
-	height: 730px;
-	max-width: calc(100vw - 20px);
-	max-height: calc(100vw - 20px);
+	height: auto;
+	/* max-height: 730px;
+	min-height: 670px; */
+	/* max-height: calc(100vw + 20px); */
 	border-radius: 10px;
 	/* padding: 40px 20px; */
 	background-color: #fff;
@@ -389,12 +390,32 @@ footer nav ul {
 	cursor: pointer;
 }
 
-.modal input {
+.modal .bouton-vert {
 	height: 36px;
 	width: 237px;
 	/* font-size: 1.2em; */
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.modal .title {
+	margin-top: 10px;
+	justify-content: left;
+}
+
+.modal .input-blanc {
+	height: 51px;
+	/* font-size: 1.2em; */
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin: 10px 0;
+	font-family: 'Work Sans';
+	padding: 0 10px;
+}
+
+.div1,
+.div2 {
+	margin: 40px 0;
 }
 
 
@@ -477,5 +498,37 @@ footer nav ul {
 .image-div .fas:hover,
 .image-div .fa-arrows-up-down-left-right:hover {
 	cursor: pointer;
+}
+
+#fleche {
+	position: absolute;
+	right: 500px;
+	bottom: 1px;
+}
+
+.div2 form {
+	display: flex;
+	flex-direction: column;
+}
+
+.fond-photo {
+	background-color: #E8F1F6;
+	padding: 5% 40%;
+	margin-bottom: 20px;
+}
+
+#image {
+	font-size: 60px;
+	color: #B9C5CC;
+}
+
+.fond-photo p {
+	font-size: 10px;
+	color: #444444;
+	white-space: nowrap;
+}
+
+#line2 {
+	margin-top: 30px;
 }
 
