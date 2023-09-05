@@ -316,7 +316,8 @@ a:hover {
 	text-decoration: underline;
 }
 
-input[type="submit"]{
+input[type="submit"],
+input[id="ajout-photo"]{
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -327,7 +328,8 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+input[id="ajout-photo"]:hover {
 	cursor: pointer;
 }
 
@@ -408,6 +410,10 @@ footer nav ul {
 
 }
 
+.gallery {
+	margin-bottom: 60px;
+}
+
 .gallery-edit figure {
 	width: 76.86px
 }
@@ -437,7 +443,7 @@ footer nav ul {
 	position: relative;
 }
 
-.image-div i {
+.image-div .fas {
 	font-size: 10px;
 	position: absolute;
 	bottom: 82px;
@@ -451,3 +457,25 @@ footer nav ul {
 	text-align: center;
 	border-radius: 2px ;
 }
+
+.image-div .fa-arrows-up-down-left-right {
+	display: none;
+	font-size: 10px;
+	position: absolute;
+	bottom: 82px;
+	left: 35px;
+	color: white;
+	padding: 3px 4px;
+	/* padding-bottom: 7px; */
+	background-color: black;
+	/* width: 10px;
+	height: 10px; */
+	text-align: center;
+	border-radius: 2px ;
+}
+
+.image-div .fas:hover,
+.image-div .fa-arrows-up-down-left-right:hover {
+	cursor: pointer;
+}
+

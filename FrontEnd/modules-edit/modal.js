@@ -12,20 +12,22 @@ export function genererModal() {
         modal.setAttribute('aria-modal', 'true')
         modal.addEventListener('click', closeModal)
         modal.querySelector('.js-modal-close').addEventListener('click', closeModal)
+        modal.querySelector('.js-modal-close-photo').addEventListener('click', closeModal)
         modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation)
     }
 
     // Fermer la modale
     const closeModal = function (e) {
         if (modal === null) return
-        e.preventDefault()
-        modal.style.display = "none"
-        modal.setAttribute('aria-hidden', 'true')
-        modal.removeAttribute('aria-modal')
-        modal.removeEventListener('click', closeModal)
-        modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
-        modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation)
-        modal = null
+            e.preventDefault()
+            modal.style.display = "none"
+            modal.setAttribute('aria-hidden', 'true')
+            modal.removeAttribute('aria-modal')
+            modal.removeEventListener('click', closeModal)
+            modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
+            modal.querySelector('.js-modal-close-photo').removeEventListener('click', closeModal)
+            modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation)
+            modal = null
     }
 
     // Empecher de fermer la modale quand on clique dessus

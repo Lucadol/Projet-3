@@ -53,10 +53,10 @@
 		<div class="titre1">
 			<h2>Mes projets</h2>
 			<div class="button-container">
-				<button class="btn-tous bouton-clique">Tous</button>
-				<button class="btn-objets">Objets</button>
-				<button class="btn-appartements">Appartements</button>
-				<button class="btn-hotels">Hôtels & restaurants</button>
+				<button class="btn-tous vert">Tous</button>
+				<button class="btn-objets vert">Objets</button>
+				<button class="btn-appartements vert">Appartements</button>
+				<button class="btn-hotels vert">Hôtels & restaurants</button>
 			</div>
 		</div>
 	</section>
@@ -67,22 +67,46 @@
 
 			<aside id="modal1" class="modal" aria-hidden="true" role="dialog" style="display: none;">
 				<div class="modal-wrapper js-modal-stop">
-					<button><i class="fa-solid fa-xmark js-modal-close"></i></button>
-					<h3>Galerie photo</h3>
-
-					<div class="gallery-edit">
-
+					<div class="div1">
+						<button><i class="fa-solid fa-xmark js-modal-close"></i></button>
+						<h3>Galerie photo</h3>
+	
+						<div class="gallery-edit">
+	
+						</div>
+					
+						<hr class="line">
+					
+						</hr>
+					
+						<form>
+							<input type="button" id="ajout-photo" value="Ajouter une photo">
+						</form>
+					
+						<p class="red">Supprimer une photo</p>
 					</div>
-				
-					<hr class="line">
-				
-					</hr>
-				
-					<form action="#" method="post">
-						<input type="submit" value="Ajouter une photo">
-					</form>
-				
-					<p class="red">Supprimer une photo</p>
+
+					<div class="div2">
+						<button><i class="fa-solid fa-arrow-left" id="fleche"></i></button>
+						<button><i class="fa-solid fa-xmark js-modal-close-photo"></i></button>
+						<h3>Ajout photo</h3>
+
+						<i class="fa-regular fa-image"></i>
+
+
+						<form>
+							<input type="file">
+							<label for="title">Titre</label>
+							<input type="text">
+							<label for="category">Catégorie</label>
+							
+							<hr class="line"></hr>
+							<input type="submit" value="Valider">
+						</form>
+
+
+				</div>
+					
 				</div>
 			</aside>
         </div>

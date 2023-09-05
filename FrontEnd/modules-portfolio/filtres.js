@@ -1,12 +1,12 @@
 import { genererGalerie } from "./galerie.js"
 
-let gallery = window.localStorage.getItem('gallery')
-if (gallery === null){
-    const reponse = await fetch("http://localhost:5678/api/works")
-    gallery = await reponse.json()
-}else{
-    gallery = JSON.parse(gallery)
-}
+// let gallery = window.localStorage.getItem('gallery')
+// if (gallery === null){
+const reponse = await fetch("http://localhost:5678/api/works")
+let gallery = await reponse.json()
+// }else{
+//     gallery = JSON.parse(gallery)
+// }
 
 
 export function boutonFilter(param1, param2) {

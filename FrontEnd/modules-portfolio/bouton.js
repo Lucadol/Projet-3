@@ -1,5 +1,5 @@
 export function boutonVert() {
-    const boutons = document.querySelectorAll("button");
+    const boutons = document.querySelectorAll(".vert");
     let dernierBoutonClique = null // Remplacez ".votre-bouton" par le sélecteur de votre bouton
 
     boutons.forEach((bouton) => {
