@@ -12,6 +12,8 @@ import { genererGalerieSansTitre } from "./modules-edit/galerie-edit.js";
 import { genererModal } from "./modules-edit/modal.js";
 import { genererIndexAvecToken } from "./modules-portfolio/token.js";
 import { afficherModal2 } from "./modules-edit/modal2.js";
+import { file } from "./modules-edit/file.js";
+import { envoyerNouveauProjet } from "./modules-edit/envoyerNouveauProjet.js";
 
 
 // let gallery = window.localStorage.getItem('gallery')
@@ -47,6 +49,12 @@ genererIndexAvecToken()
 
 
 afficherModal2()
+
+file()
+
+envoyerNouveauProjet()
+
+
 
 
 

@@ -84,24 +84,32 @@
 						<h3>Ajout photo</h3>
 
 
-						<form>
-							<div class="fond-photo">
-								<i class="fa-regular fa-image" id="image"></i>
+						<form id="ajout-projet">
 
-								<input type="file" accept=".img,.jpg">
-								<p>jpg, png : 4mo max</p>
+							<div class="fond-photo">
+								<i class="fa-regular fa-image label-file" id="image"></i>
+								<label for="image_uploads" class="label-file"
+								>+ Ajouter photo</label>
+								<input
+								 type="file"
+								 id="image_uploads"
+								 name="image_uploads"
+								 accept=".png, .jpg, .jpeg">
+								 <p class="label-file">jpg, png : 4mo max</p>
 							</div>
+							
 							<label for="title" class="title">Titre</label>
 							<input type="text" class="input-blanc">
-							<label for="category" class="title">Catégorie</label>
+							<label for="category" class="title" id="title">Catégorie</label>
 							<select name="category" id="category" class="input-blanc">
+								<option value=""></option>
 								<option value="id1">Objets</option>
 								<option value="id2">Appartements</option>
 								<option value="id3">Hôtels & restaurants</option>
 							</select>
 							
 							<hr class="line" id="line2"></hr>
-							<input type="submit" class="bouton-vert" value="Valider">
+							<input type="submit" class="bouton-vert disabled" id="valider" value="Valider">
 						</form>
 					</div>
 					
@@ -125,7 +133,7 @@
 			<input type="email" name="email" id="email">
 			<label for="message">Message</label>
 			<textarea name="message" id="message" cols="30" rows="10"></textarea>
-			<input type="submit" value="Envoyer">
+			<input type="submit" id="submit" value="Envoyer">
 		</form>
 	</section>
 

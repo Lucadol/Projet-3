@@ -316,7 +316,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-input[type="submit"],
+input[id="submit"],
 input[id="ajout-photo"]{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -328,7 +328,7 @@ input[id="ajout-photo"]{
 	border-radius: 60px ;
 }
 
-input[type="submit"]:hover,
+input[id="submit"]:hover,
 input[id="ajout-photo"]:hover {
 	cursor: pointer;
 }
@@ -512,9 +512,19 @@ footer nav ul {
 }
 
 .fond-photo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: #E8F1F6;
+	height: 130px;
 	padding: 5% 40%;
 	margin-bottom: 20px;
+	border-radius: 3px;
+}
+
+.fond-photo.image-affichee {
+    padding: 0;
+	height: 170px;
 }
 
 #image {
@@ -532,3 +542,50 @@ footer nav ul {
 	margin-top: 30px;
 }
 
+.fond-photo label {
+	font-weight: 600;
+	color: #306685;
+	background-color: #CBD6DC;
+	padding: 10px 0;
+	margin : 10px;
+	margin-bottom: -10px;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+.fond-photo label:hover {
+	cursor: pointer;
+}
+
+.active,
+.disabled {
+	font-family: 'Syne';
+	font-weight: 700;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px
+}
+
+.active {
+	color: white;
+	background-color: #1D6154;
+}
+
+.disabled {
+	color: #FFFFFF;
+	background-color: #A7A7A7;
+}
+
+.active:hover {
+	cursor: pointer;
+}
+
+.disabled:hover {
+	cursor: auto;
+}
+
+.image-preview {
+	height: 100%;
+}
