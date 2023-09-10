@@ -68,7 +68,7 @@ function supprimerProjet() {
     const tokenObjet = JSON.parse(tokenData)
     const token = tokenObjet.token
 
-    console.log(token)
+    // console.log(token)
 
     // Parcourir toutes les icones de poubelle
     poubelles.forEach(poubelle => {
