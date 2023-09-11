@@ -70,6 +70,9 @@ function supprimerProjet() {
 
     // console.log(token)
 
+
+    // Supprimer visuellement les projets de la galerie :
+
     // Parcourir toutes les icones de poubelle
     poubelles.forEach(poubelle => {
         poubelle.addEventListener('click', async function(event) {

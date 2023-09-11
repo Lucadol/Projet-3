@@ -4,7 +4,7 @@ export function envoyerNouveauProjet() {
     // Parse la chaine JSON en un objet JavaScript
     const tokenObjet = JSON.parse(tokenData)
     const token = tokenObjet.token
-    const userId = tokenObjet.userId
+    // const userId = tokenObjet.userId
 
     console.log(token)
 
@@ -41,10 +41,34 @@ export function envoyerNouveauProjet() {
         }
     });
 
+
+
+    // const inputImage = document.getElementById("image_uploads");
+
+    // inputImage.addEventListener("change", function (e) {
+    // const selectedFile = e.target.files[0];
+
+    // if (selectedFile) {
+    //     const reader = new FileReader();
+
+    //     reader.onload = function (e) {
+    //     // Le contenu du fichier est accessible ici
+    //     const fileContent = e.target.result;
+    //     // Vous pouvez faire quelque chose avec le contenu du fichier, par exemple l'afficher dans une image
+    //     // document.getElementById("image-preview").src = fileContent;
+    //     };
+
+    //     reader.readAsDataURL(selectedFile);
+    // }
+    // });
+
+
+
     formulaire.addEventListener('submit', async function(event) {
         event.preventDefault()
 
-        const image = document.getElementById("image_uploads").value
+        const formData = new FormData(formulaire)
+        const image = inputImage.files[0]
         const title = document.querySelector(".input-blanc[type='text']").value
         const categoryValue = document.getElementById("category").value
 
@@ -62,54 +86,89 @@ export function envoyerNouveauProjet() {
         //     categoryId = 0 // Par exemple, une valeur par défaut
         // }
 
-        const reponse = await fetch("http://localhost:5678/api/works")
-        let gallery = await reponse.json()
-        
-        // Trouve l'ID la plus élevée dans la liste
-        let highestId = 0;
-        for (const item of gallery) {
-            if (item.id > highestId) {
-                highestId = item.id;
-            }
-        }
+        // // Convertir categoryId en nombre entier
+        // categoryValue = parseInt(categoryValue)
 
-        let id = highestId + 1
 
-        
-    const donnees = {
-        "id": id,
-        "title": title,
-        "imageUrl": image,
-        "categoryId": categoryValue,
-        "userId": userId,
-        // "category": {
-        //     "id": categoryId,
-        //     "name": categoryValue
-        // }
-    }
+        formData.append("image", image)
+        formData.append("title", title)
+        formData.append("category", parseInt(categoryValue, 10))
 
-    console.log(donnees)
+        console.log([...formData])
 
-    try {
-        const response = await fetch("http://localhost:5678/api/works", {
+        await fetch('http://localhost:5678/api/works', {
             method: "POST",
-            body: JSON.stringify(donnees),
+            body: formData,
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "multipart/form-data",
                 "Authorization": `Bearer ${token}`
             }
         })
-
-        if(!response.ok) {
-            throw new Error('La requête a échoué')
-        }
-
-        console.log('Envoi réussi')
-
-    } catch (error) {
-        console.error("Erreur lors de l'envoi :", error)
-    }
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
 
     })
-
 }
+
+
+       
+
+        // const reponse = await fetch("http://localhost:5678/api/works")
+        // let gallery = await reponse.json()
+        
+        // // Trouve l'ID la plus élevée dans la liste
+        // let highestId = 0;
+        // for (const item of gallery) {
+        //     if (item.id > highestId) {
+        //         highestId = item.id;
+        //     }
+        // }
+
+        // let id = highestId + 1
+
+        
+    // const donnees = {
+    //     // "id": id,
+    //     "title": title,
+    //     "imageUrl": image,
+    //     "category": categoryValue,
+    //     // "userId": userId,
+    //     // "category": {
+    //     //     "id": categoryId,
+    //     //     "name": categoryValue
+    //     // }
+    // }
+
+
+    // FormData.append
+
+    // Si jamais ça ne marche pas :
+    // FileReader
+
+
+    // console.log(donnees)
+
+//     try {
+//         const response = await fetch("http://localhost:5678/api/works", {
+//             method: "POST",
+//             body: formData,
+//             headers: {
+//                 "Content-Type": "multipart/form-data",
+//                 "Authorization": `Bearer ${token}`
+//             }
+//         })
+
+//         if(!response.ok) {
+//             throw new Error('La requête a échoué')
+//         }
+
+//         console.log('Envoi réussi')
+
+//     } catch (error) {
+//         console.error("Erreur lors de l'envoi :", error)
+//     }
+
+//     })
+
+// }
