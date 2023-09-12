@@ -54,54 +54,6 @@ body {
 	font-size: 14px;
 }
 
-.edit {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	/* justify-content: center; */
-	height: 50%;
-}
-
-.header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
-}
-/* .header-modifier {
-
-} */
-
-header .presentation {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
-}
-
-.bande-noire {
-	display: flex;
-	justify-content: center;
-	background-color: black;
-	color:white;
-	padding: 10px;
-	max-width: none;
-	width: 100%;
-	margin: 0 auto; /* Centre l'élément horizontalement */	
-}
-
-.bande-noire .noir {
-	margin-top: 10px;
-	margin-left: 30px;
-}
-
-.bande-noire .blanc {
-	background-color:white;
-	color: black;
-	border-radius: 20px;
-	padding: 10px;
-	margin-left: 20px;
-	
-}
-
 section {
 	margin: 50px 0
 }
@@ -129,6 +81,72 @@ h2{
 	color: #1D6154
 }
 
+/*** Bande noire ***/
+
+.edit {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* justify-content: center; */
+	height: 50%;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0
+}
+
+header .presentation {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0
+}
+
+.bande-noire {
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	color:white;
+	padding: 10px;
+	max-width: none;
+	width: 100%;
+	margin: 0 auto; /* Centre l'élément horizontalement */
+	/* padding-right: 200px;
+	padding-left: 200px; */
+}
+
+.bande-latérale {
+	position: absolute;
+	top: 0;
+	border-width: 27px 200px;
+	border-style: solid; 
+	border-color: black;
+}
+
+.droite {
+	right: 0;
+}
+
+.gauche {
+	left: 0;
+}
+
+.bande-noire .noir {
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+.bande-noire .blanc {
+	background-color:white;
+	color: black;
+	border-radius: 20px;
+	padding: 10px;
+	margin-left: 20px;
+	
+}
+
+/**** Nav barre ****/
 
 nav ul {
 	display: flex;
@@ -143,6 +161,7 @@ nav li {
 
 nav a {
 	text-decoration: none;
+	color: black;
 }
 
 li:hover,
@@ -150,6 +169,12 @@ a:hover {
 	color: #B1663C;
 	cursor:pointer
 }
+
+#logout {
+	margin-left: -15px;
+}
+
+/***** Section introduction *****/
 
 #introduction {
 	display: flex;
@@ -174,17 +199,15 @@ a:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+/***** Section portfolio *****/
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
 }
-.gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
-}
+
+/*** Portfolio v1 ***/
 
 #portfolio .button-container {
 	display: flex;
@@ -205,7 +228,6 @@ a:hover {
 	min-width: 100px;
 	padding: 5px 10px;
 	margin: 5px;
-	
 }
 
 .button-container button:hover {
@@ -218,6 +240,8 @@ a:hover {
 	color : white;
 	background-color: #1D6154;
 }
+
+/*** Portfolio v2 ***/
 
 .titre-edit {
 	display: flex;
@@ -239,12 +263,25 @@ a:hover {
 
 .titre-edit a {
 	text-decoration: none;
+	color: black;
+}
+
+/*** Gallerie ***/
+
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
 }
 
 .gallery img {
 	width: 100%;
 
 }
+
+/***** Section contact + login *****/
 
 #contact,
 #login {
@@ -271,29 +308,12 @@ a:hover {
 	flex-direction: column;
 }
 
-/* #login form {
-	align-items: center;
-	text-align: left;
-} */
-
 #contact input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-
-#login input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-}
-
-/* #login #email,
-#login #password {
-	width: 380px;
-} */
 
 #contact label,
 #login label  {
@@ -304,16 +324,6 @@ a:hover {
 #login textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-}
-
-.login p {
-	color: red;
-	text-align: center;
-	font-size: 18px;
-}
-
-.mdp p {
-	text-decoration: underline;
 }
 
 input[id="submit"],
@@ -333,13 +343,34 @@ input[id="ajout-photo"]:hover {
 	cursor: pointer;
 }
 
+/***** Section login *****/
+
+#login input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.login p {
+	color: red;
+	text-align: center;
+	font-size: 18px;
+}
+
+.mdp p {
+	text-decoration: underline;
+}
+
+/***** Section footer *****/
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
-/* Modal pour édition de la galerie */
+/***** Modal pour édition de la galerie *****/
 
 .modal {
 	position: fixed;
@@ -398,26 +429,12 @@ footer nav ul {
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-.modal .title {
-	margin-top: 10px;
-	justify-content: left;
-}
-
-.modal .input-blanc {
-	height: 51px;
-	/* font-size: 1.2em; */
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	margin: 10px 0;
-	font-family: 'Work Sans';
-	padding: 0 10px;
-}
-
 .div1,
 .div2 {
 	margin: 40px 0;
 }
 
+/*** Modal 1 ***/
 
 .gallery-edit {
 	display: grid;
@@ -458,6 +475,23 @@ footer nav ul {
 
 .red {
 	color: red;
+}
+
+/*** Modal 2 ***/
+
+.modal .title {
+	margin-top: 10px;
+	justify-content: left;
+}
+
+.modal .input-blanc {
+	height: 51px;
+	/* font-size: 1.2em; */
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin: 10px 0;
+	font-family: 'Work Sans';
+	padding: 0 10px;
 }
 
 .image-div {

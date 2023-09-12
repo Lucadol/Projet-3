@@ -10,7 +10,6 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="main.js"></script>
-	<!-- <script type="module" src="edit.js"></script> -->
 	<script src="https://kit.fontawesome.com/102e595c97.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -19,6 +18,8 @@
 	<div class="bande-noire">
         <p class="noir"><i class="fa-regular fa-pen-to-square"></i> Mode édition</p>
         <p class="blanc">publier les changements</p>
+		<div class="bande-latérale droite"></div>
+		<div class="bande-latérale gauche"></div>
     </div>
 
     <div class="presentation">
@@ -27,7 +28,8 @@
             <ul>
                 <li><a href="index.html">projets</a></li>
                 <li><a href="#contact">contact</a></li>
-                <li><a href="login.html">login</a></li>
+                <li><a href="login.html" id="login">login</a></li>
+                <li><a href="index.html" id="logout">logout</a></li>
                 <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
@@ -77,12 +79,10 @@
 						<p class="red">Supprimer une photo</p>
 					</div>
 
-					<!-- Il me reste encore à désactiver le bouton valider et mettre en forme le choix du fichier -->
 					<div class="div2">
 						<button><i class="fa-solid fa-arrow-left" id="fleche"></i></button>
 						<button><i class="fa-solid fa-xmark js-modal-close-photo"></i></button>
 						<h3>Ajout photo</h3>
-
 
 						<form id="ajout-projet">
 
@@ -93,7 +93,6 @@
 								<input
 								 type="file"
 								 id="image_uploads"
-								
 								 accept=".png, .jpg, .jpeg">
 								 <p class="label-file">jpg, png : 4mo max</p>
 							</div>
@@ -117,11 +116,7 @@
 			</aside>
         </div>
 
-		<div class="gallery">
-
-		</div>
-
-
+		<div class="gallery"></div>
 
 	<section id="contact">
 		<h2>Contact</h2>

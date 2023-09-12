@@ -1,4 +1,4 @@
-import { genererGalerie } from "./galerie.js"
+import { genererGalerie } from "./genererGalerie.js"
 
 // let gallery = window.localStorage.getItem('gallery')
 // if (gallery === null){
@@ -9,7 +9,7 @@ let gallery = await reponse.json()
 // }
 
 
-export function boutonFilter(param1, param2) {
+export function boutonFiltre(param1, param2) {
     const boutonFilter1 = document.querySelector(param1)
     boutonFilter1.addEventListener("click", function () {
 

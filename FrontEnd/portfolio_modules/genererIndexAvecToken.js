@@ -11,10 +11,20 @@ export function genererIndexAvecToken() {
         document.querySelector('.bande-noire').style.display = 'flex'
         document.querySelector('.titre-edit').style.display = 'flex'
         document.querySelector('.titre1').style.display = 'none'
+        document.getElementById('login').style.display = 'none'
+        const logout = document.getElementById('logout')
+        logout.style.display = 'flex'
+
+        logout.addEventListener("click", () => {
+            localStorage.removeItem('token')
+        })
+        
     // charge la page en mode visiteur
     } else {
         document.querySelector('.bande-noire').style.display = 'none'
         document.querySelector('.titre-edit').style.display = 'none'
         document.querySelector('.titre1').style.display = 'block'
+        document.getElementById('login').style.display = 'flex'
+        document.getElementById('logout').style.display = 'none'
     }
 }

@@ -2,6 +2,9 @@ export function boutonVert() {
     const boutons = document.querySelectorAll(".vert");
     let dernierBoutonClique = null // Remplacez ".votre-bouton" par le sélecteur de votre bouton
 
+    const boutonTous = document.querySelector(".btn-tous")
+    boutonTous.classList.add("bouton-clique")
+
     boutons.forEach((bouton) => {
         bouton.addEventListener("click", function () {
         // Retirez la classe "bouton-clique" de tous les boutons

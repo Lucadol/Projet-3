@@ -1,4 +1,5 @@
-import { genererGalerie } from "./modules-portfolio/galerie.js";
+import { genererGalerie } from "./portfolio_modules/genererGalerie.js"
+
 
 export function login() {
 

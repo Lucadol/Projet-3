@@ -1,7 +1,7 @@
-var fileTypes = ["image/jpeg", "image/pjpeg", "image/png"];
+let fileTypes = ["image/jpeg", "image/pjpeg", "image/png"];
 
 export function validFileType(file) {
-  for (var i = 0; i < fileTypes.length; i++) {
+  for (let i = 0; i < fileTypes.length; i++) {
     if (file.type === fileTypes[i]) {
       return true;
     }
@@ -33,7 +33,7 @@ export function updateImageDisplay() {
         fondPhoto.removeChild(existingImage);
     }
   
-    var curFiles = input.files;
+    let curFiles = input.files;
     if (curFiles.length > 0 && validFileType(curFiles[0])) {
         const image = document.createElement("img");
         image.src = window.URL.createObjectURL(curFiles[0]);
