@@ -1,4 +1,4 @@
-import { genererGalerie } from "../portfolio_modules/genererGalerie";
+import { genererGalerie } from "../portfolio_modules/genererGalerie.js";
 import { genererGalerieSansTitre } from "./galerieModal.js";
 
 export function envoyerNouveauProjet() {

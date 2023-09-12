@@ -1,4 +1,4 @@
-import { genererGalerie } from "../edit_modules/genererGalerie.js"
+import { genererGalerie } from "./genererGalerie.js"
 
 // let gallery = window.localStorage.getItem('gallery')
 // if (gallery === null){
