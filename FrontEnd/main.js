@@ -1,6 +1,6 @@
 // Permet d'importer toutes les fonctions dont j'ai besoin
 import { boutonFiltre } from "./portfolio_modules/boutonFiltre.js";
-import { genererGalerie } from "./edit_modules/genererGalerie.js";
+import { genererGalerie } from "./portfolio_modules/genererGalerie.js";
 import { boutonVert } from "./portfolio_modules/boutonVert.js";
 import { genererGalerieSansTitre } from "./edit_modules/galerieModal.js";
 import { genererModal } from "./edit_modules/genererModal.js";
