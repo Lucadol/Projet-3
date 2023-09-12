@@ -1,3 +1,6 @@
+import { genererGalerie } from "../portfolio_modules/genererGalerie";
+import { genererGalerieSansTitre } from "./galerieModal.js";
+
 export function envoyerNouveauProjet() {
 
     const tokenData = localStorage.getItem('token')
@@ -96,79 +99,54 @@ export function envoyerNouveauProjet() {
 
         console.log([...formData])
 
-        await fetch('http://localhost:5678/api/works', {
-            method: "POST",
-            body: formData,
-            headers: {
-                "Content-Type": "multipart/form-data",
-                "Authorization": `Bearer ${token}`
+        try {
+            const response = await fetch("http://localhost:5678/api/works", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                    "Authorization": `Bearer ${token}`
+                }
+            })
+    
+            if(!response.ok) {
+                throw new Error('La requête a échoué')
             }
+    
+            console.log('Envoi réussi')
+
+            // Fermer la modale
+            modal.style.display = "none"
+            
+            const reponse = await fetch("http://localhost:5678/api/works")
+            let newGallery = await reponse.json()
+
+            // Ajouter le projet à la galerie
+            genererGalerie(newGallery)
+
+            // Ajouter le projet à la galerie modale
+            genererGalerieSansTitre(newGallery)
+
+    
+        } catch (error) {
+            console.error("Erreur lors de l'envoi :", error)
+        }
+    
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
 
-    })
+
+    //     await fetch('http://localhost:5678/api/works', {
+    //         method: "POST",
+    //         body: formData,
+    //         headers: {
+    //             "Content-Type": "multipart/form-data",
+    //             "Authorization": `Bearer ${token}`
+    //         }
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => console.log(data))
+    //     .catch(err => console.log(err))
+    // })
 }
-
-
-       
-
-        // const reponse = await fetch("http://localhost:5678/api/works")
-        // let gallery = await reponse.json()
-        
-        // // Trouve l'ID la plus élevée dans la liste
-        // let highestId = 0;
-        // for (const item of gallery) {
-        //     if (item.id > highestId) {
-        //         highestId = item.id;
-        //     }
-        // }
-
-        // let id = highestId + 1
-
-        
-    // const donnees = {
-    //     // "id": id,
-    //     "title": title,
-    //     "imageUrl": image,
-    //     "category": categoryValue,
-    //     // "userId": userId,
-    //     // "category": {
-    //     //     "id": categoryId,
-    //     //     "name": categoryValue
-    //     // }
-    // }
-
-
-    // FormData.append
-
-    // Si jamais ça ne marche pas :
-    // FileReader
-
-
-    // console.log(donnees)
-
-//     try {
-//         const response = await fetch("http://localhost:5678/api/works", {
-//             method: "POST",
-//             body: formData,
-//             headers: {
-//                 "Content-Type": "multipart/form-data",
-//                 "Authorization": `Bearer ${token}`
-//             }
-//         })
-
-//         if(!response.ok) {
-//             throw new Error('La requête a échoué')
-//         }
-
-//         console.log('Envoi réussi')
-
-//     } catch (error) {
-//         console.error("Erreur lors de l'envoi :", error)
-//     }
-
-//     })
 
 // }

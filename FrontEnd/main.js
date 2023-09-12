@@ -1,12 +1,6 @@
-// async function recupererTravaux () {
-//     const response = await fetch("http://localhost:5678/api/works");
-//     const data = await response.json();
-//     return data;
-//   };
-
 // Permet d'importer toutes les fonctions dont j'ai besoin
 import { boutonFiltre } from "./portfolio_modules/boutonFiltre.js";
-import { genererGalerie } from "./portfolio_modules/genererGalerie.js";
+import { genererGalerie } from "./edit_modules/genererGalerie.js";
 import { boutonVert } from "./portfolio_modules/boutonVert.js";
 import { genererGalerieSansTitre } from "./edit_modules/galerieModal.js";
 import { genererModal } from "./edit_modules/genererModal.js";
@@ -18,17 +12,11 @@ import { supprimerProjet } from "./edit_modules/supprimerProjet.js";
 
 
 // Permet de récupérer les travaux sur l'api
-
-// let gallery = window.localStorage.getItem('gallery')
-// if (gallery === null){
 const reponse = await fetch("http://localhost:5678/api/works")
 let gallery = await reponse.json()
-// } else {
-//     gallery = JSON.parse(gallery)
-// }
-// recupererTravaux()
 
-// Partie 1 : page principale
+
+// Partie 1 : Page principale
 
 // Génère la galerie principale
 genererGalerie(gallery)
@@ -48,7 +36,7 @@ boutonVert()
 genererIndexAvecToken()
 
 
-// Partie 2 : la modale
+// Partie 2 : Modale
 
 // Génère la modale
 genererModal()
@@ -64,5 +52,3 @@ supprimerProjet()
 
 // Permet d'envoyer un nouveau projet (pas encore fini)
 envoyerNouveauProjet()
-
-

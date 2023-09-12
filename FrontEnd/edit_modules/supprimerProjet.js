@@ -1,3 +1,9 @@
+// import { genererGalerie } from "../portfolio_modules/genererGalerie"
+
+// Permet de récupérer les travaux sur l'api
+// const reponse = await fetch("http://localhost:5678/api/works")
+// let gallery = await reponse.json()
+
 export function supprimerProjet() {
 
     const poubelles = document.querySelectorAll('.fas')
@@ -7,6 +13,7 @@ export function supprimerProjet() {
     const token = tokenObjet.token
 
     // Supprimer visuellement les projets de la galerie :
+
 
     // Parcourir toutes les icones de poubelle
     poubelles.forEach(poubelle => {
@@ -43,10 +50,10 @@ export function supprimerProjet() {
                         console.warn(`Elément <figure> avec image-id ${imageId} non trouvé`)
                     }
                 } else {
-                    console.warn(`Elément avec image-id ${imageId} non trouvé`)
-            }
+                    console.warn(`Elément avec image-id ${imageId} non trouvé`) 
+                }
+                modal.style.display = null
                 
-
             } catch (error) {
                 console.error('Erreur lors de la suppresion :', error)
             }

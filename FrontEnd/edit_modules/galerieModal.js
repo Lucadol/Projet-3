@@ -13,6 +13,7 @@ export function genererGalerieSansTitre(data) {
         // Crée un conteneur <div> pour l'image et les icônes
         const imageDiv = document.createElement("div")
         imageDiv.classList.add("image-div")
+        imageDiv.classList.add("imageModale")
 
 
         imageDiv.setAttribute('image-id', article.id)

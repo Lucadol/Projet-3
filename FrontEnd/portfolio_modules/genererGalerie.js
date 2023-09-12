@@ -14,6 +14,8 @@ export function genererGalerie(data){
         const sectionGallery = document.querySelector(".gallery")
         const pieceElement = document.createElement("figure")
 
+        pieceElement.classList.add("image-div")
+
         const imageElement = document.createElement("img")
         imageElement.src = article.imageUrl
 
