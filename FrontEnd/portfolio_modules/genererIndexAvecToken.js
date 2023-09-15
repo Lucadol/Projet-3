@@ -18,6 +18,8 @@ export function genererIndexAvecToken() {
         logout.addEventListener("click", () => {
             localStorage.removeItem('token')
         })
+
+        return true
         
     // charge la page en mode visiteur
     } else {
@@ -26,5 +28,6 @@ export function genererIndexAvecToken() {
         document.querySelector('.titre1').style.display = 'block'
         document.getElementById('login').style.display = 'flex'
         document.getElementById('logout').style.display = 'none'
+        return false
     }
 }

@@ -104,7 +104,7 @@ header .presentation {
 }
 
 .bande-noire {
-	display: flex;
+	display: none;
 	justify-content: center;
 	background-color: black;
 	color:white;
@@ -244,12 +244,16 @@ a:hover {
 /*** Portfolio v2 ***/
 
 .titre-edit {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	margin-left: 85px;
 	margin-bottom: 50px;
+}
+
+.titre1 {
+	display: none;
 }
 
 .title {
@@ -282,6 +286,14 @@ a:hover {
 }
 
 /***** Section contact + login *****/
+
+/* #login {
+	display: none;
+} */
+
+#logout {
+	display: none;
+}
 
 #contact,
 #login {
@@ -360,6 +372,10 @@ input[id="ajout-photo"]:hover {
 
 .mdp p {
 	text-decoration: underline;
+}
+
+.erreur {
+	display: none;
 }
 
 /***** Section footer *****/

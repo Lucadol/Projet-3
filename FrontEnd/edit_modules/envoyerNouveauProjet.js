@@ -1,6 +1,3 @@
-import { genererGalerie } from "../portfolio_modules/genererGalerie.js";
-import { genererGalerieSansTitre } from "./galerieModal.js";
-
 export function envoyerNouveauProjet() {
 
     const tokenData = localStorage.getItem('token')
@@ -45,28 +42,6 @@ export function envoyerNouveauProjet() {
     });
 
 
-
-    // const inputImage = document.getElementById("image_uploads");
-
-    // inputImage.addEventListener("change", function (e) {
-    // const selectedFile = e.target.files[0];
-
-    // if (selectedFile) {
-    //     const reader = new FileReader();
-
-    //     reader.onload = function (e) {
-    //     // Le contenu du fichier est accessible ici
-    //     const fileContent = e.target.result;
-    //     // Vous pouvez faire quelque chose avec le contenu du fichier, par exemple l'afficher dans une image
-    //     // document.getElementById("image-preview").src = fileContent;
-    //     };
-
-    //     reader.readAsDataURL(selectedFile);
-    // }
-    // });
-
-
-
     formulaire.addEventListener('submit', async function(event) {
         event.preventDefault()
 
@@ -74,23 +49,6 @@ export function envoyerNouveauProjet() {
         const image = inputImage.files[0]
         const title = document.querySelector(".input-blanc[type='text']").value
         const categoryValue = document.getElementById("category").value
-
-        // let categoryId
-
-        // // Utilisation d'une instruction if-else pour mapper categoryValue à categoryId
-        // if (categoryValue === "Objets") {
-        //     categoryId = 1
-        // } else if (categoryValue === "Appartements") {
-        //     categoryId = 2
-        // } else if (categoryValue === "Hôtels & restaurants") {
-        //     categoryId = 3
-        // } else {
-        //     // Gérer d'autres cas si nécessaire
-        //     categoryId = 0 // Par exemple, une valeur par défaut
-        // }
-
-        // // Convertir categoryId en nombre entier
-        // categoryValue = parseInt(categoryValue)
 
 
         formData.append("image", image)
@@ -104,7 +62,6 @@ export function envoyerNouveauProjet() {
                 method: "POST",
                 body: formData,
                 headers: {
-                    "Content-Type": "multipart/form-data",
                     "Authorization": `Bearer ${token}`
                 }
             })
@@ -112,20 +69,81 @@ export function envoyerNouveauProjet() {
             if(!response.ok) {
                 throw new Error('La requête a échoué')
             }
-    
-            console.log('Envoi réussi')
 
-            // Fermer la modale
-            modal.style.display = "none"
-            
-            const reponse = await fetch("http://localhost:5678/api/works")
-            let newGallery = await reponse.json()
+            // // Fermer la modale
+            const modal = document.querySelector('.modal'); // Sélectionnez la modale par son identifiant
+            if (!modal) return; // Si la modale n'est pas trouvée, retournez
+            // e.preventDefault();
+            modal.style.display = "none";
 
-            // Ajouter le projet à la galerie
-            genererGalerie(newGallery)
 
-            // Ajouter le projet à la galerie modale
-            genererGalerieSansTitre(newGallery)
+            // Générer le projet dans la galerie
+            const sectionGallery = document.querySelector(".gallery")
+            const pieceElement1 = document.createElement("figure")
+            pieceElement1.classList.add("image-div")
+
+            const imageElement = document.createElement("img")
+
+            // Créer une URL d'objet blob à partir du fichier
+            const imageUrl = URL.createObjectURL(image)
+            imageElement.src = imageUrl
+
+            const titleElement = document.createElement("figcaption")
+            titleElement.innerText = title
+
+            sectionGallery.appendChild(pieceElement1)
+            pieceElement1.appendChild(imageElement)
+            pieceElement1.appendChild(titleElement)
+
+
+
+            // Générer le projet dans la modale
+            const sectionGallery2 = document.querySelector(".gallery-edit")
+            const pieceElement2 = document.createElement("figure")
+
+            const imageDiv = document.createElement("div")
+            imageDiv.classList.add("image-div")
+            imageDiv.classList.add("imageModale")
+
+            // imageDiv.setAttribute('image-id', article.id)
+
+            // Crée une icône de poubelle
+            const poubelleElement = document.createElement('i')
+            poubelleElement.classList.add("fas", "fa-trash-can")
+
+            // Crée une icône de flèche
+            const flecheElement = document.createElement('i')
+            flecheElement.classList.add("fa-solid", "fa-arrows-up-down-left-right")
+
+            // Crée un élément <p> pour le bouton "éditer"
+            const editElement = document.createElement("p")
+            editElement.innerText = "éditer"
+
+            // Crée un élément <img> pour afficher l'image
+            const imageElementModal = document.createElement("img")
+            imageElementModal.src = imageUrl
+
+            // Ajoute l'image, les icônes et le bouton "éditer" au conteneur d'image
+            imageDiv.appendChild(imageElementModal) // Ajoute l'élément img ici
+            imageDiv.appendChild(poubelleElement)
+            imageDiv.appendChild(flecheElement)
+
+            // Ajoute le conteneur d'image et le bouton "éditer" à l'élément <figure>
+            pieceElement2.appendChild(imageDiv)
+            pieceElement2.appendChild(editElement)
+
+            // Ajoute l'élément <figure> à la galerie
+            sectionGallery2.appendChild(pieceElement2)
+
+            // Affiche la flèche lors du survol
+            pieceElement2.addEventListener('mouseenter', () => {
+                flecheElement.style.display = 'block' // Affiche la flèche
+            });
+
+            // Masque la flèche lorsque la souris quitte l'article
+            pieceElement2.addEventListener('mouseleave', () => {
+                flecheElement.style.display = 'none' // Cache la flèche
+            });
 
     
         } catch (error) {
@@ -134,19 +152,4 @@ export function envoyerNouveauProjet() {
     
         })
 
-
-    //     await fetch('http://localhost:5678/api/works', {
-    //         method: "POST",
-    //         body: formData,
-    //         headers: {
-    //             "Content-Type": "multipart/form-data",
-    //             "Authorization": `Bearer ${token}`
-    //         }
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => console.log(data))
-    //     .catch(err => console.log(err))
-    // })
 }
-
-// }

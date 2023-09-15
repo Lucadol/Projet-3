@@ -35,12 +35,12 @@ export function genererModal() {
         e.stopPropagation()
     }
 
-    // Permet d'ouvrir la modale
+    // // Permet d'ouvrir la modale
     document.querySelectorAll('.js-modal').forEach(a => {
         a.addEventListener('click', openModal)
     })
 
-    // Permet de fermer la modale en cliquant sur Echap
+    // // Permet de fermer la modale en cliquant sur Echap
     window.addEventListener('keydown', function (e) {
         if (e.key === "Escape" || e.key === "Esc")
         closeModal(e)

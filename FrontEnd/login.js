@@ -1,11 +1,10 @@
 import { genererGalerie } from "./portfolio_modules/genererGalerie.js"
 
 
-export function login() {
+// function login() {
 
     // Sélectionne l'élément qui affichera les erreurs de connexion
     const erreur = document.querySelector('.login p')
-    erreur.style.display = 'none'
 
     const formulaire = document.getElementById('login')
 
@@ -17,8 +16,7 @@ export function login() {
         const email = document.getElementById('email').value
         const motdepasse = document.getElementById('password').value
 
-        console.log('Email : ', email)
-        console.log('Mot de passe : ', motdepasse)
+        erreur.style.display = 'none'
 
          // Permet de créer un objet de données à envoyer au serveur
         const donnees = {
@@ -32,7 +30,7 @@ export function login() {
                 method: "POST",
                 body: JSON.stringify(donnees),
                 headers: {"Content-Type": "application/json"}
-                })
+            })
 
             if (!response.ok) {
                 throw new Error('La requête a échoué')
@@ -40,20 +38,22 @@ export function login() {
 
             const token = await response.json()
             localStorage.setItem('token', JSON.stringify(token))
+            erreur.style.display = 'none'
             //permet d'ouvrir la nouvelle page dans le même onglet
             window.location.href = "index.html"
-            genererGalerie()
+            // genererGalerie()
 
         } catch (error) {
             // Affiche l'erreur en html
-            erreur.style.display = 'block'
+            throw new Error(erreur.style.display = 'block')
+            // console.error("erreur")
         }
 
     })
 
-}
+// }
 
-login()
+// login()
 
 
 

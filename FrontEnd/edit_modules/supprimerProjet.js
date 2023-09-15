@@ -1,5 +1,8 @@
 // import { genererGalerie } from "../portfolio_modules/genererGalerie"
 
+import { genererGalerie } from "../portfolio_modules/genererGalerie.js"
+
+
 // Permet de récupérer les travaux sur l'api
 // const reponse = await fetch("http://localhost:5678/api/works")
 // let gallery = await reponse.json()
@@ -22,7 +25,6 @@ export function supprimerProjet() {
 
             // Récupère l'id de l'image à partir de l'attribut image-id
             const imageId = this.closest('.image-div').getAttribute('image-id')
-            console.log('ID de l\'image :', imageId)
 
             // Je peux utiliser ici imageId pour supprimer un projet
             try {
@@ -38,9 +40,20 @@ export function supprimerProjet() {
                     throw new Error('La requête a échoué')
                 }
 
-                // Suppression réussie
-                console.log('Suppression réussie')
 
+                // Supprimer l'élément de la galerie principale
+                const galleryImageToRemove = document.querySelector(`[image-id2="${imageId}"]`);
+                if (galleryImageToRemove) {
+                    const galleryFigure = galleryImageToRemove.closest('figure');
+                    if (galleryFigure) {
+                        galleryFigure.remove();
+                    }
+                } else {
+                    console.warn(`Elément avec image-id ${imageId} non trouvé dans la galerie principale`);
+                }
+
+                
+                // Supprimer l'élément de la modale
                 const imageDiv = document.querySelector(`[image-id="${imageId}"]`)
                 if (imageDiv) {
                     const figureElement = imageDiv.closest('figure') // Trouve l'élément <figure> parent de l'image-div
@@ -52,7 +65,7 @@ export function supprimerProjet() {
                 } else {
                     console.warn(`Elément avec image-id ${imageId} non trouvé`) 
                 }
-                modal.style.display = null
+                
                 
             } catch (error) {
                 console.error('Erreur lors de la suppresion :', error)
