@@ -1,3 +1,5 @@
+// Permet de passer de la modale 1 à la modale 2
+
 export function afficherModal2() {
 
     document.querySelector('.div2').style.display = 'none'

@@ -1,12 +1,12 @@
+// Permet d'envoyer un nouveau projet à l'API et de l'intégrer
+// dynamiquement au DOM
+
 export function envoyerNouveauProjet() {
 
     const tokenData = localStorage.getItem('token')
     // Parse la chaine JSON en un objet JavaScript
     const tokenObjet = JSON.parse(tokenData)
     const token = tokenObjet.token
-    // const userId = tokenObjet.userId
-
-    console.log(token)
 
     const formulaire = document.getElementById("ajout-projet");
     const valider = document.getElementById("valider");
@@ -71,8 +71,8 @@ export function envoyerNouveauProjet() {
             }
 
             // // Fermer la modale
-            const modal = document.querySelector('.modal'); // Sélectionnez la modale par son identifiant
-            if (!modal) return; // Si la modale n'est pas trouvée, retournez
+            const modal = document.querySelector('.modal'); // Sélectionner la modale par son identifiant
+            if (!modal) return; // Si la modale n'est pas trouvée, retourner
             // e.preventDefault();
             modal.style.display = "none";
 
@@ -96,7 +96,6 @@ export function envoyerNouveauProjet() {
             pieceElement1.appendChild(titleElement)
 
 
-
             // Générer le projet dans la modale
             const sectionGallery2 = document.querySelector(".gallery-edit")
             const pieceElement2 = document.createElement("figure")
@@ -104,8 +103,6 @@ export function envoyerNouveauProjet() {
             const imageDiv = document.createElement("div")
             imageDiv.classList.add("image-div")
             imageDiv.classList.add("imageModale")
-
-            // imageDiv.setAttribute('image-id', article.id)
 
             // Crée une icône de poubelle
             const poubelleElement = document.createElement('i')

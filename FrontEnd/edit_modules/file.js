@@ -1,3 +1,5 @@
+// Permet de custom l'ajout de photo
+
 let fileTypes = ["image/jpeg", "image/pjpeg", "image/png"];
 
 export function validFileType(file) {
@@ -27,7 +29,7 @@ export function updateImageDisplay() {
     const input = document.querySelector(".fond-photo input")
     const fondPhoto = document.querySelector(".fond-photo")
 
-    //Supprimez l'élément img existant s'il y en a un
+    //Supprime l'élément img existant s'il y en a un
     const existingImage = fondPhoto.querySelector("img");
     if (existingImage) {
         fondPhoto.removeChild(existingImage);
@@ -38,16 +40,16 @@ export function updateImageDisplay() {
         const image = document.createElement("img");
         image.src = window.URL.createObjectURL(curFiles[0]);
 
-        // Ajoutez la classe CSS à l'image si nécessaire
+        // Ajoute la classe CSS à l'image si nécessaire
         image.classList.add("image-preview");
 
-        // Ajoutez l'image à la div "fond-photo"
+        // Ajoute l'image à la div "fond-photo"
         fondPhoto.appendChild(image);
 
          // Lorsque l'image est ajoutée, ajoutez la classe "image-affichee" pour supprimer le padding
         fondPhoto.classList.add("image-affichee");
 
-         // Sélectionnez les éléments avec la classe "label-file" et masquez-les
+         // Sélectionne les éléments avec la classe "label-file" et masquez-les
          const labels = document.querySelectorAll(".label-file");
          labels.forEach(label => {
              label.style.display = "none";
@@ -58,7 +60,6 @@ export function updateImageDisplay() {
 export function file() {
 
     const input = document.querySelector(".fond-photo input")
-    // const preview = document.querySelector(".preview")
 
     // Permet de laisser l'élément interactif (comparé à visibility: hidden et display: none)
     input.style.opacity = 0

@@ -21,45 +21,45 @@ let gallery = await reponse.json()
 const modeEditeur = genererIndexAvecToken()
 
 if (modeEditeur) {
-// Partie 2 : Modale
+    // Partie 2 : Modale
 
-// Génère la galerie principale
-genererGalerie(gallery)
+    // Génère la galerie principale
+    genererGalerie(gallery)
 
- // Permet d'ouvrir la modale
- genererModal()
+    // Permet d'ouvrir la modale
+    genererModal()
 
 
-// Génère la galerie dans la modale
-genererGalerieModal(gallery)
+    // Génère la galerie dans la modale
+    genererGalerieModal(gallery)
 
-// Permet d'afficher la modale 2 et de cacher la modale 1
-afficherModal2()
+    // Permet d'afficher la modale 2 et de cacher la modale 1
+    afficherModal2()
 
-// Permet de customiser l'envoi de fichier
-file()
+    // Permet de customiser l'envoi de fichier
+    file()
 
-// Permet de supprimer un projet
-supprimerProjet()
+    // Permet de supprimer un projet
+    supprimerProjet()
 
-// Permet d'envoyer un nouveau projet (pas encore fini)
-envoyerNouveauProjet()
+    // Permet d'envoyer un nouveau projet (pas encore fini)
+    envoyerNouveauProjet()
 
 
 } else {
-// Partie 1 : Page principale
+    // Partie 1 : Page principale
 
-// Génère la galerie principale
-genererGalerie(gallery)
+    // Génère la galerie principale
+    genererGalerie(gallery)
 
-// Permet le filtre grâce aux boutons
-boutonFiltre(".btn-tous")
-boutonFiltre(".btn-objets", 1)
-boutonFiltre(".btn-appartements", 2)
-boutonFiltre(".btn-hotels", 3)
+    // Permet le filtre grâce aux boutons
+    boutonFiltre(".btn-tous")
+    boutonFiltre(".btn-objets", 1)
+    boutonFiltre(".btn-appartements", 2)
+    boutonFiltre(".btn-hotels", 3)
 
-// Permet de maintenir un bouton vert même après le click
-boutonVert()
+    // Permet de maintenir un bouton vert même après le click
+    boutonVert()
 }
 
 

@@ -1,7 +1,6 @@
-import { genererGalerie } from "./portfolio_modules/genererGalerie.js"
+// Ce script permet de pouvoir se connecter au site, d'accéder au mode éditeur et stocke le token
+// dans le localStorage si la connexion est réussie, sinon renvoie un message d'erreur
 
-
-// function login() {
 
     // Sélectionne l'élément qui affichera les erreurs de connexion
     const erreur = document.querySelector('.login p')
@@ -41,19 +40,13 @@ import { genererGalerie } from "./portfolio_modules/genererGalerie.js"
             erreur.style.display = 'none'
             //permet d'ouvrir la nouvelle page dans le même onglet
             window.location.href = "index.html"
-            // genererGalerie()
 
         } catch (error) {
             // Affiche l'erreur en html
             throw new Error(erreur.style.display = 'block')
-            // console.error("erreur")
         }
 
     })
-
-// }
-
-// login()
 
 
 

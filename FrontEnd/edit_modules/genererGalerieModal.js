@@ -1,4 +1,5 @@
-// Génère une galerie
+// Génère la galerie dans la modale
+
 export function genererGalerieModal(data) {
     // Sélectionne l'élément HTML qui servira de conteneur pour la galerie
     const sectionGallery = document.querySelector(".gallery-edit")

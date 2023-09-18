@@ -1,11 +1,5 @@
-// import { genererGalerie } from "../portfolio_modules/genererGalerie"
-
-import { genererGalerie } from "../portfolio_modules/genererGalerie.js"
-
-
-// Permet de récupérer les travaux sur l'api
-// const reponse = await fetch("http://localhost:5678/api/works")
-// let gallery = await reponse.json()
+// Permet de supprimer un projet de l'API et 
+// modifie dynamiquement le DOM
 
 export function supprimerProjet() {
 
@@ -14,9 +8,6 @@ export function supprimerProjet() {
     // Parse la chaine JSON en un objet JavaScript
     const tokenObjet = JSON.parse(tokenData)
     const token = tokenObjet.token
-
-    // Supprimer visuellement les projets de la galerie :
-
 
     // Parcourir toutes les icones de poubelle
     poubelles.forEach(poubelle => {

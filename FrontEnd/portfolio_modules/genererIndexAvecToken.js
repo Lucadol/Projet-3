@@ -1,6 +1,6 @@
+// Permet de générer la page en mode éditeur ou visiteur en fonction du token
+
 export function genererIndexAvecToken() {
-// cette ligne de code est utilisée pour réinitialiser la page en mode visiteur
-// localStorage.removeItem('token')
 
 // stocke le token dans le localStorage et permet de savoir si la page doit être chargée
 // en mode éditeur ou en mode visiteur
@@ -16,6 +16,7 @@ export function genererIndexAvecToken() {
         logout.style.display = 'flex'
 
         logout.addEventListener("click", () => {
+            // cette ligne de code est utilisée pour réinitialiser la page en mode visiteur
             localStorage.removeItem('token')
         })
 

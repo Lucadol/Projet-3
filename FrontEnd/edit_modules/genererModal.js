@@ -1,3 +1,5 @@
+// Génère la modale, permet également d'ouvrir et de fermer la modale
+
 export function genererModal() {
 
     // Création d'une modale

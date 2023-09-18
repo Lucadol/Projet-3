@@ -1,11 +1,4 @@
-// let gallery = window.localStorage.getItem('gallery')
-// if (gallery === null){
-//     const reponse = await fetch("http://localhost:5678/api/works")
-//     gallery = await reponse.json()
-// }else{
-//     gallery = JSON.parse(gallery)
-// }
-
+// Cette fonction permet de générer la galerie dans le portfolio
 
 export function genererGalerie(data){
     for (let i = 0; i < data.length; i++) {
