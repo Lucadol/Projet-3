@@ -2,7 +2,7 @@
 // dynamiquement au DOM
 
 import { fermerModal } from "./fermerModal.js";
-import { genererProjetDansGalerieEtModale } from "./genererProjetDansGalerieEtModal.js";
+import { genererProjetDansGalerieEtModal } from "./genererProjetDansGalerieEtModal.js";
 import { tousLesChampsSontRemplis } from "./tousLesChampsSontRemplis.js";
 
 export function envoyerNouveauProjet() {
@@ -66,7 +66,7 @@ export function envoyerNouveauProjet() {
             fermerModal()
 
             // Générer le projet dans la galerie et la modale
-            genererProjetDansGalerieEtModale(image, title)
+            genererProjetDansGalerieEtModal(image, title)
     
         } catch (error) {
             console.error("Erreur lors de l'envoi :", error)

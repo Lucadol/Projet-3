@@ -1,4 +1,4 @@
-export function genererProjetDansGalerieEtModale(image, title) {
+export function genererProjetDansGalerieEtModal(image, title) {
     // Générer le projet dans la galerie
     const sectionGallery = document.querySelector(".gallery")
     const pieceElement1 = document.createElement("figure")
