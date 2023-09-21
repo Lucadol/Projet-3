@@ -61,9 +61,3 @@ if (modeEditeur) {
     // Permet de maintenir un bouton vert même après le click
     boutonVert()
 }
-
-
-
-
-
-
