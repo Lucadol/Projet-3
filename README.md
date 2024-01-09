@@ -1,14 +1,12 @@
 # <p align="center">OC-Projet3-Sophie-Bluel</p>
 ## Créez une page web dynamique avec JavaScript
 
-## Back-end :
-
-### 🛠️ Install Dependencies 
+### 🛠️ Install Dependencies Back-end
 ```bash
 npm install
 ```
 
-### 🧑🏻‍💻 Usage
+### 🧑🏻‍💻 Usage Back-end
 ```bash
 npm start
 ```
