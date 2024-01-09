@@ -1,5 +1,19 @@
-# Projet n°3 - Parcours Développeur Web - OpenClassrooms
+# <p align="center">OC-Projet3-Sophie-Bluel</p>
 ## Créez une page web dynamique avec JavaScript
+
+##Back-end :
+
+### 🛠️ Install Dependencies 
+```bash
+npm install
+```
+
+### 🧑🏻‍💻 Usage
+```bash
+npm start
+```
+
+![Projet 3](https://github.com/Lucadol/Projet-3-OC/assets/130574901/3d10077f-ba9e-4d26-b876-7ea1c396291f)
 
 ### Objectifs de la mission :
 * Développer la page de présentation des travaux de l'architecte (à partir du HTML fourni) ;
